@@ -68,9 +68,7 @@ class NoteController extends Controller
         if(!Customer::find($customerId)){
             return response()->json(['status'=>"customer Not Found"],Response::HTTP_NOT_FOUND);
         }
-        if(Customer::find($customerId)->customer_id !==$customerId){
-            return response()->json(['status'=>"Invalid customer"],Response::HTTP_BAD_REQUEST);
-        }
+      
         return  Note::find($id)??   response()->json(['status'=>"Not found"],Response::HTTP_NOT_FOUND);
     }
 }

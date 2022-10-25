@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCustomer;
 use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class CustomersController extends Controller
     }
 
     //create customer by id
-    public function  create(Request $request)
+    public function  create(CreateCustomer $request)
     {
         $customer = new Customer();
         $customer->name =  $request->get('name');
